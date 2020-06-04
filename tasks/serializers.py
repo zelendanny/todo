@@ -13,3 +13,10 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
                   'is_completed',
                   'completed_at',
                   ]
+        extra_kwargs = {
+            'description':
+                {
+                    'required': False,
+                    'allow_blank': True,
+                }
+        }
