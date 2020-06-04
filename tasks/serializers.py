@@ -10,6 +10,7 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
                   'title',
                   'description',
                   'created_at',
+                  'deadline_at',
                   'is_completed',
                   'completed_at',
                   ]
