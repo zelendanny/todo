@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Task(models.Model):
@@ -8,3 +9,7 @@ class Task(models.Model):
     deadline_at = models.DateTimeField(null=True)
     is_completed = models.BooleanField(default=False)
     completed_at = models.DateTimeField(null=True)
+
+    def save(self, **kwargs):
+        self.completed_at = datetime.now() if self.is_completed else None
+        super().save(**kwargs)
